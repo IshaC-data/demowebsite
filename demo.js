@@ -1,6 +1,5 @@
-// Simple form submission demo
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+// Optional: smooth scroll for "Explore Properties" button
+document.querySelector('.btn').addEventListener('click', function(e){
   e.preventDefault();
-  alert("Thank you for reaching out! Our team will contact you soon.");
-  this.reset();
+  document.querySelector('#properties').scrollIntoView({ behavior: 'smooth' });
 });
