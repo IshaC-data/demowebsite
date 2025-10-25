@@ -1,5 +1,10 @@
-// Optional: smooth scroll for "Explore Properties" button
-document.querySelector('.btn').addEventListener('click', function(e){
-  e.preventDefault();
-  document.querySelector('#properties').scrollIntoView({ behavior: 'smooth' });
-});
+// Digital Clock Functionality
+function updateClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+}
+setInterval(updateClock, 1000);
+updateClock(); // Initial call to display clock immediately
