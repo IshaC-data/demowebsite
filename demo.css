@@ -1,3 +1,4 @@
+/* Global */
 * {
   margin: 0;
   padding: 0;
@@ -7,20 +8,21 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #333;
   background-color: #f8f8f8;
+  line-height: 1.6;
 }
+
+/* Header */
 header {
-  background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  position: relative;
   height: 100vh;
-  color: white;
+  background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
+  color: white;
 }
-header::before {
-  content: "";
+header .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,119 +30,119 @@ header::before {
   bottom: 0;
   background: rgba(0,0,0,0.55);
 }
-header h1 {
+header .header-content {
   position: relative;
+  max-width: 800px;
+  padding: 20px;
+}
+header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5em;
+  font-size: 4em;
   letter-spacing: 2px;
+  margin-bottom: 15px;
 }
 header p {
-  position: relative;
-  margin-top: 10px;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  margin-bottom: 30px;
 }
 .btn {
-  position: relative;
   display: inline-block;
-  margin-top: 30px;
-  padding: 12px 30px;
+  padding: 14px 35px;
   background: #c19b77;
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  transition: background 0.3s;
+  transition: 0.3s;
+  font-weight: bold;
 }
 .btn:hover {
   background: #b1835d;
 }
+
+/* Sections */
 section {
   padding: 80px 10%;
-}
-.properties {
-  background: white;
 }
 .section-title {
   font-family: 'Playfair Display', serif;
   text-align: center;
-  margin-bottom: 50px;
-  font-size: 2em;
+  margin-bottom: 60px;
+  font-size: 2.5em;
   color: #333;
 }
+
+/* Featured Properties */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 .card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 .card img {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
 }
 .card-content {
-  padding: 20px;
+  padding: 25px;
 }
 .card-content h3 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 1.5em;
 }
 .card-content p {
   color: #666;
+  font-size: 1em;
 }
+
+/* About Section */
 .about {
   text-align: center;
   background: #f4f4f4;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  padding: 80px 10%;
 }
 .about p {
   max-width: 700px;
-  margin: 20px auto;
-  line-height: 1.6;
+  margin: 0 auto;
+  font-size: 1.1em;
 }
+
+/* Contact Section */
 .contact {
   text-align: center;
+  padding-bottom: 100px;
 }
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.google-form iframe {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-input, textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
-  width: 100%;
-}
-button {
-  padding: 12px;
-  background: #c19b77;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-button:hover {
-  background: #b1835d;
-}
+
+/* Footer */
 footer {
   background: #111;
   color: #ccc;
   text-align: center;
   padding: 25px 0;
-  font-size: 0.9em;
+  font-size: 0.95em;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  header h1 {
+    font-size: 3em;
+  }
+  header p {
+    font-size: 1.2em;
+  }
 }
